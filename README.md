@@ -28,16 +28,18 @@ In this diagram, we have 3 instances.
 
 A VPC and three subnet where created for these three instances. We have 2 public subets and one private subnet. DB server placed in a privet subnet for ensue the securiy. Jumb server and wordpress instance placed in public subnet. 
 
+Jumb server is only used to access all other servers. Wordpress and DB instance only allow the SSH access from the Jumb server.
+
 
 ![alt text](https://github.com/rony-james/Connect-a-private-DB-instance-using-NAT/blob/main/VPC.png?raw=true)
 
 
-We need to reate an additional RT for the privet subnet. Because of the privet subnet, DB server did not have any public IP. So if it needed an external communication, we need to create a NAT environment. 
+We need to create an additional RT for the private subnet. Because of the privet subnet, DB server did not have any public IP. So if it needed an external communication, we need to create a NAT environment. 
 
 ![alt text](https://github.com/rony-james/Connect-a-private-DB-instance-using-NAT/blob/main/NAT.png?raw=true)
 
 
-That NAT entry should be specified in the privet RT. NAT should be placed in a public subnet. If the DB server need to communicate outside, NAT will do that job. Also we should specify the IGW in the main Routing Table.
+That NAT entry should be specified in the private RT. While creating NAT, It should be placed in a public subnet. If the DB server need to communicate outside, NAT will do that job. Also we should specify the IGW in the main Routing Table.
 
 
 ![alt text](https://github.com/rony-james/Connect-a-private-DB-instance-using-NAT/blob/main/Routing%20Tables.png?raw=true)
@@ -55,3 +57,7 @@ That NAT entry should be specified in the privet RT. NAT should be placed in a p
 
 
 ![alt text](https://github.com/rony-james/Connect-a-private-DB-instance-using-NAT/blob/main/routes.png?raw=true)
+
+
+
+While configuring the wordpress, we should specify the private IP of DB instance.
