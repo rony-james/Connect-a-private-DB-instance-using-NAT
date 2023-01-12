@@ -2,6 +2,12 @@
 We have a wordpress website which need to connect a DB server in a private instance.
 
 
+
+
+![alt text](https://github.com/rony-james/Connect-a-private-DB-instance-using-NAT/blob/main/NAT.jpg?raw=true)
+
+
+
 ## Used Resources
 
 - EC2
