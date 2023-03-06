@@ -26,7 +26,7 @@ In this diagram, we have 3 instances.
 
 
 
-A VPC and three subnet where created for these three instances. We have 2 public subets and one private subnet. DB server placed in a privet subnet for ensue the securiy. Jumb server and wordpress instance placed in public subnet. 
+A VPC and three subnet where created for these three instances. We have 2 public subets and one private subnet. DB server placed in a privet subnet to ensue the securiy. Jumb server and wordpress instance placed in public subnet. 
 
 Jumb server is only used to access all other servers. Wordpress and DB instance only allow the SSH access from the Jumb server.
 
